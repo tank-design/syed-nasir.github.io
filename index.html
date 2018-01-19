@@ -72,6 +72,9 @@
 
     <!-- CSS Plugin -->
     <link href="css/magnific-popup.css" rel="stylesheet" type="text/css">
+      
+    <!-- Animate -->
+    <link href="css/animate.css"rel="stylesheet">
 
     <!-- Custom CSS -->
     <link href="css/custom.min.css" rel="stylesheet">
@@ -111,7 +114,7 @@
 
     <!-- Header -->
     <header class="masthead text-white text-center">
-        <div class="container">
+        <div class="container animated zoomIn">
             <img class="img-fluid mb-5 d-block mx-auto" src="img/tank_design_blog_banner.png" alt="placeholder" style="border-radius: 50%;">
             <h1 class="text-uppercase mb-0">Tank Design</h1>
             <hr class="star-light">
@@ -177,9 +180,6 @@
                   <a class="carousel-control-next" href="#portfolioCarousel" role="button" data-slide="next">
                     <span class="carousel-control-next-icon"></span>
                   </a>
-                
-                  <!--Carousel Button-->
-                  <button class="btn btn-danger btn-sm" id="carousel-button"><span id="carousel-button-icon" class="fa fa-pause"></span></button>
                 </div>
             </div>
         </div>
@@ -397,28 +397,5 @@
 
     <!-- Custom JS -->
     <script src="js/custom.min.js"></script>
-      
-    <!--Carousel Button Custom JS-->
-    <script>
-        $(document).ready(function(){
-            $("#portfolioCarousel").carousel({interval: 1500});
-            
-            $("#carousel-button").click(function(){
-                if ($("#carousel-button").children("span").hasClass('fa-pause')){
-                    $("#portfolioCarousel").carousel('pause');
-                    $("#carousel-button").children("span").removeClass('fa-pause');
-                    $("#carousel-button").children("span").addClass('fa-play');
-                }
-
-
-                else if ($("#carousel-button").children("span").hasClass('fa-play')){
-                    $("#portfolioCarousel").carousel('cycle');
-                    $("#carousel-button").children("span").removeClass('fa-play');
-                    $("#carousel-button").children("span").addClass('fa-pause');
-                }
-            });
-            
-        });
-    </script>
   </body>
 </html>
