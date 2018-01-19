@@ -36,7 +36,30 @@
         
         #about {
             background-color: #152e39;
-        }   
+        } 
+        
+        footer {
+            background-color: #152e39;
+        }
+        
+        .carousel {
+            background:#152e39;
+        }
+
+        .carousel-item{
+            height:  300px;
+        }
+
+        .carousel-item img {
+            min-height:  300px;
+            margin: 0 auto;
+        }
+        
+        #carousel-button {
+            right: 0px;
+            position: absolute;
+            bottom: 0px;
+        }
     </style>
       
     <!-- Bootstrap CSS -->
@@ -95,13 +118,81 @@
             <h2 class="font-weight-light mb-0">Web UI/UX Design</h2>
         </div>
     </header>
-    
-    <!-- Portfolio -->
+      
     <section class="portfolio" id="portfolio">
       <div class="container">
         <h2 class="text-center text-uppercase text-secondary mb-0">Portfolio</h2>
         <hr class="star-dark mb-5">
-        <div class="row">
+        <div class="row justify-content-center">
+            <div class="col">
+                <div id="portfolioCarousel" class="carousel slide" data-ride="carousel">
+                    
+                  <!--Carousel Indicators-->
+                  <ol class="carousel-indicators">
+                    <li data-target="#portfolioCarousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#portfolioCarousel" data-slide-to="1"></li>
+                    <li data-target="#portfolioCarousel" data-slide-to="2"></li>
+                  </ol>
+                    
+                  <!--Carousel-->
+                  <div class="carousel-inner" role="listbox">
+                    <div class="carousel-item active">
+                      <a class="portfolio-item d-block mx-auto" href="#portfolio-modal-1">
+                        <div class="portfolio-item-caption d-flex position-absolute h-100 w-100">
+                            <div class="portfolio-item-caption-content my-auto w-100 text-center text-white">
+                                <i class="fa fa-search-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <img class="img-fluid" src="img/tankdesign.gif" alt="Tank Design - Coming Soon!">
+                        </a>
+                    </div>
+                      
+                    <div class="carousel-item">
+                      <a class="portfolio-item d-block mx-auto" href="#portfolio-modal-2">
+                        <div class="portfolio-item-caption d-flex position-absolute h-100 w-100">
+                            <div class="portfolio-item-caption-content my-auto w-100 text-center text-white">
+                                <i class="fa fa-search-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <img class="img-fluid" src="img/tankdesign.gif" alt="Tank Design - Coming Soon!">
+                        </a>
+                    </div>
+                      
+                    <div class="carousel-item">
+                      <a class="portfolio-item d-block mx-auto" href="#portfolio-modal-3">
+                        <div class="portfolio-item-caption d-flex position-absolute h-100 w-100">
+                            <div class="portfolio-item-caption-content my-auto w-100 text-center text-white">
+                                <i class="fa fa-search-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <img class="img-fluid" src="img/tankdesign.gif" alt="Tank Design - Coming Soon!">
+                        </a>
+                    </div>
+                  </div>
+                    
+                  <!--Carousel Controls-->
+                  <a class="carousel-control-prev" href="#portfolioCarousel" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                  </a>
+                  <a class="carousel-control-next" href="#portfolioCarousel" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                  </a>
+                
+                  <!--Carousel Button-->
+                  <button class="btn btn-danger btn-sm" id="carousel-button"><span id="carousel-button-icon" class="fa fa-pause"></span></button>
+                </div>
+            </div>
+        </div>
+      </div>
+    </section>
+    
+    
+    <!-- Alternate Portfolio Section
+    <section class="portfolio" id="portfolio">
+      <div class="container">
+        <h2 class="text-center text-uppercase text-secondary mb-0">Portfolio</h2>
+        <hr class="star-dark mb-5"> 
+          <div class="row">
           <div class="col-md-4">
             <a class="portfolio-item d-block mx-auto" href="#portfolio-modal-1">
               <div class="portfolio-item-caption d-flex position-absolute h-100 w-100">
@@ -136,7 +227,7 @@
           </div>            
         </div>
       </div>
-    </section>
+    </section>-->
 
     <!-- About -->
     <section class="text-white mb-0" id="about">
@@ -238,6 +329,12 @@
       </div>
     </footer>
 
+    <div class="copyright py-4 text-center text-white">
+      <div class="container">
+        <small>Tank Design &copy; 2018</small>
+      </div>
+    </div>
+      
     <!-- Portfolio Modals -->
     <!-- Modal 1 -->
     <div class="portfolio-modal mfp-hide" id="portfolio-modal-1">
@@ -300,5 +397,28 @@
 
     <!-- Custom JS -->
     <script src="js/custom.min.js"></script>
+      
+    <!--Carousel Button Custom JS-->
+    <script>
+        $(document).ready(function(){
+            $("#portfolioCarousel").carousel({interval: 1500});
+            
+            $("#carousel-button").click(function(){
+                if ($("#carousel-button").children("span").hasClass('fa-pause')){
+                    $("#portfolioCarousel").carousel('pause');
+                    $("#carousel-button").children("span").removeClass('fa-pause');
+                    $("#carousel-button").children("span").addClass('fa-play');
+                }
+
+
+                else if ($("#carousel-button").children("span").hasClass('fa-play')){
+                    $("#portfolioCarousel").carousel('cycle');
+                    $("#carousel-button").children("span").removeClass('fa-play');
+                    $("#carousel-button").children("span").addClass('fa-pause');
+                }
+            });
+            
+        });
+    </script>
   </body>
 </html>
