@@ -81,6 +81,14 @@
         #carousel-inner {
             z-index: 1;
         }
+        
+        .carousel-control-prev {
+            z-index: 1;
+        }
+        
+        .carousel-control-next {
+            z-index: 1;
+        }
     </style>
       
     <!-- Bootstrap CSS -->
@@ -119,8 +127,8 @@
     <nav class="navbar navbar-expand-lg fixed-top text-uppercase" id="mainNav">
       <div class="container">
         <a class="navbar-brand js-scroll-trigger" href="#page-top">Tank Design</a>
-        <button class="navbar-toggler navbar-toggler-right text-uppercase bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          Menu
+        <button id="navbarButton" class="navbar-toggler navbar-toggler-right text-uppercase bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          Menu  
           <i class="fa fa-bars"></i>
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
@@ -141,7 +149,7 @@
         
     <!-- Header -->
       <header class="masthead text-white text-center">
-        <div class="container animated zoomIn">   
+        <div class="container animated fadeIn">   
             <img class="img-fluid mb-5 d-block mx-auto" src="img/tank_design_blog_banner.png" alt="placeholder" style="border-radius: 50%;">
             <h1 class="text-uppercase mb-0">Tank Design</h1>
             <hr class="star-light">
@@ -431,10 +439,28 @@
     <script src="js/custom.min.js"></script>
       
     <!-- Particles.js JS Script -->
-    <script>particlesJS.load('particles-js', 'js/particles.json', function() {
-  	console.log('callback - particles.js config loaded');
-	});
+    <script>
+        particlesJS.load('particles-js', 'js/particles.json', function() {
+  	     console.log('callback - particles.js config loaded');
+	       });
 	</script>
+        
+    <script>
+        $("#navbarButton").click(function(){
+                if ($("#navbarButton").children("i").hasClass('fa-bars')){
+                    $("#navbarButton").children("i").removeClass('fa-bars');
+                    $("#navbarButton").children("i").addClass('fa-close');
+                }
+
+
+                else if ($("#navbarButton").children("i").hasClass('fa-close')){
+                    $("#navbarButton").children("i").removeClass('fa-close');
+                    $("#navbarButton").children("i").addClass('fa-bars');
+                }
+            });    
+    
+        
+    </script>
     </div>
     </body>
 </html>
