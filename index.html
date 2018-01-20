@@ -42,7 +42,6 @@
         
         footer {
             background-color: #152e39;
-            border: none;
         }
         
         .carousel {
@@ -126,7 +125,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg fixed-top text-uppercase" id="mainNav">
       <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="#page-top">Tank Design</a>
+        <a class="navbar-brand js-scroll-trigger" href="#page-top" id="navbarTitle">Tank Design</a>
         <button id="navbarButton" class="navbar-toggler navbar-toggler-right text-uppercase bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           Menu  
           <i class="fa fa-bars"></i>
@@ -134,13 +133,13 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item mx-0 mx-lg-1">
-              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#portfolio">Portfolio</a>
+              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#portfolio" id="navbarPortfolio">Portfolio</a>
             </li>
             <li class="nav-item mx-0 mx-lg-1">
-              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#about">About</a>
+              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#about" id="navbarAbout">About</a>
             </li>
             <li class="nav-item mx-0 mx-lg-1">
-              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#contact">Contact</a>
+              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#contact" id="navbarContact">Contact</a>
             </li>
           </ul>
         </div>
@@ -444,7 +443,8 @@
   	     console.log('callback - particles.js config loaded');
 	       });
 	</script>
-        
+    
+    <!-- Navbar Button JS Script -->
     <script>
         $("#navbarButton").click(function(){
                 if ($("#navbarButton").children("i").hasClass('fa-bars')){
@@ -460,6 +460,51 @@
             });    
     
         
+        $("#navbarTitle").click(function(){
+                if ($("#navbarButton").children("i").hasClass('fa-close')){
+                    $("#navbarButton").children("i").removeClass('fa-close');
+                    $("#navbarButton").children("i").addClass('fa-bars');
+                }
+         });
+        
+        $("#navbarPortfolio").click(function(){
+                if ($("#navbarButton").children("i").hasClass('fa-bars')){
+                    $("#navbarButton").children("i").removeClass('fa-bars');
+                    $("#navbarButton").children("i").addClass('fa-close');
+                }
+
+
+                else if ($("#navbarButton").children("i").hasClass('fa-close')){
+                    $("#navbarButton").children("i").removeClass('fa-close');
+                    $("#navbarButton").children("i").addClass('fa-bars');
+                }
+         });  
+        
+        $("#navbarAbout").click(function(){
+                if ($("#navbarButton").children("i").hasClass('fa-bars')){
+                    $("#navbarButton").children("i").removeClass('fa-bars');
+                    $("#navbarButton").children("i").addClass('fa-close');
+                }
+
+
+                else if ($("#navbarButton").children("i").hasClass('fa-close')){
+                    $("#navbarButton").children("i").removeClass('fa-close');
+                    $("#navbarButton").children("i").addClass('fa-bars');
+                }
+         });
+        
+        $("#navbarContact").click(function(){
+                if ($("#navbarButton").children("i").hasClass('fa-bars')){
+                    $("#navbarButton").children("i").removeClass('fa-bars');
+                    $("#navbarButton").children("i").addClass('fa-close');
+                }
+
+
+                else if ($("#navbarButton").children("i").hasClass('fa-close')){
+                    $("#navbarButton").children("i").removeClass('fa-close');
+                    $("#navbarButton").children("i").addClass('fa-bars');
+                }
+         });  
     </script>
     </div>
     </body>
