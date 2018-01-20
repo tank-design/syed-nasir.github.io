@@ -32,6 +32,8 @@
         
         header {
             background-color: #152e39;
+            max-width: 100%;
+            max-height: 100%;
         }  
         
         #about {
@@ -60,6 +62,21 @@
             position: absolute;
             bottom: 0px;
         }
+        
+        #particles-js {
+          position:fixed;
+          top:0;
+          right:0;
+          bottom:0;
+          left:0;
+          z-index: 1; 
+          opacity: 0.4;
+        }
+        
+        #overlay {
+          position: relative;
+        }
+        
     </style>
       
     <!-- Bootstrap CSS -->
@@ -86,9 +103,12 @@
   <link rel="apple-touch-icon" sizes="114x114" href="img/tank_design_icon_114x114.png" />
   <link rel="apple-touch-icon" sizes="144x144" href="img/tank_design_icon_144x144.png" />
 
-  <body id="page-top">
-      
-    <!-- Navigation -->
+  <body>  
+    
+    <!-- PARTICLES.JS BACKGROUND -->
+    <div id="particles-js"></div>  
+    
+    <!-- NAVIGATION -->
     <nav class="navbar navbar-expand-lg fixed-top text-uppercase" id="mainNav">
       <div class="container">
         <a class="navbar-brand js-scroll-trigger" href="#page-top">Tank Design</a>
@@ -111,17 +131,19 @@
         </div>
       </div>
     </nav>
-
+      
+    <!-- REST OF THE CONTENT -->
+  	<div id="overlay">
     <!-- Header -->
-    <header class="masthead text-white text-center">
-        <div class="container animated zoomIn">
+      <header class="masthead text-white text-center">
+        <div class="container animated zoomIn">   
             <img class="img-fluid mb-5 d-block mx-auto" src="img/tank_design_blog_banner.png" alt="placeholder" style="border-radius: 50%;">
             <h1 class="text-uppercase mb-0">Tank Design</h1>
             <hr class="star-light">
             <h2 class="font-weight-light mb-0">Web UI/UX Design</h2>
         </div>
-    </header>
-      
+     </header>
+    
     <section class="portfolio" id="portfolio">
       <div class="container">
         <h2 class="text-center text-uppercase text-secondary mb-0">Portfolio</h2>
@@ -333,7 +355,9 @@
       <div class="container">
         <small>Tank Design &copy; 2018</small>
       </div>
-    </div>
+    </div>      
+</div>    
+    
       
     <!-- Portfolio Modals -->
     <!-- Modal 1 -->
@@ -385,7 +409,7 @@
           </div>
         </div>
       </div>
-    </div>
+
 
     <!-- Bootstrap JS -->
     <script src="js/jquery.min.js"></script>
@@ -394,8 +418,18 @@
     <!-- JS Plugins -->
     <script src="js/jquery.easing.min.js"></script>
     <script src="js/jquery.magnific-popup.min.js"></script>
+      
+    <!-- Particles.js JS Plugin -->
+    <script src="js/particles.min.js"></script>
 
     <!-- Custom JS -->
     <script src="js/custom.min.js"></script>
-  </body>
+      
+    <!-- Particles.js JS Script -->
+    <script>particlesJS.load('particles-js', 'js/particles.json', function() {
+  	console.log('callback - particles.js config loaded');
+	});
+	</script>
+    </div>
+    </body>
 </html>
