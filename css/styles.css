@@ -1,0 +1,174 @@
+* {
+    margin: 0 auto;
+}
+
+body {
+    background-image: url(../img/chalkboard.jpeg);
+    background-size: cover;
+    min-width: 100vw;
+    min-height: 100vh;
+    background-color: #2f434a;
+}
+
+
+
+/* MEDIA QUERIES */
+
+@media screen and (max-width: 940px) {
+    body {
+        background-image: url(../img/chalkboard_cropped.jpeg);
+    }
+}
+
+
+
+/* RESPONSIVE GRID SETUP */
+
+.grid {
+    width: 100vw;
+	height: 100vh;
+}
+
+#logo.row {
+	width: 100vw;
+    height: 60vh;
+}
+
+#filler.row {
+	width: 100vw;
+    height: 20vh;
+}
+
+.column-1 {
+	width: 8.33vw;
+}
+
+.column-2 {
+	width: 16.6vw;
+}
+
+.column-3 {
+	width: 25.00vw;
+}
+
+.column-4 {
+	width: 33.33vw;
+}
+
+.column-5 {
+	width: 41.66vw;
+}
+
+.column-6 {
+	width: 50.0vw;
+}
+
+.column-7 {
+	width: 58.33vw;
+}
+
+.column-8 {
+	width: 66.66vw;
+}
+
+.column-9 {
+	width: 75.00vw;
+}
+
+.column-10 {
+	width: 83.33vw;
+}
+
+.column-11 {
+	width: 91.66vw;
+}
+
+.column-12 {
+	width: 100.00vw;
+}
+
+
+
+/* ROTATING LOGO ELEMENTS */
+
+#canvas {
+    position: relative;
+    width: 400px;
+    min-height: 450px;
+}
+
+#nexus {
+    position: absolute;
+    top: 0px;
+    left: 30px;
+    animation: rotate 5s forwards;
+}
+
+#people {
+    position: absolute;
+    top: 45px;
+    left: 60px;
+    animation: translateLeft 5s forwards;
+}
+
+#lightbulb {
+    position: absolute;
+    top: 30px;
+    left: 255px;
+    animation: translateDown 5s forwards;
+}
+
+#computer {
+    position: absolute;
+    top: 225px;
+    left: 255px;
+    animation: translateRight 5s forwards;
+}
+
+#website {
+    position: absolute;
+    top: 225px;
+    left: 75px;
+    animation: translateUp 5s forwards;
+}
+
+#tank {
+    opacity: 0;
+    position: absolute;
+    top: 350px;
+    left: 102px;
+    animation: fadeIn 3s 3s forwards;
+}
+
+
+
+/* KEYFRAMES */
+@keyframes rotate {
+    from {transform: rotateZ(0deg)}
+    to {transform: rotateZ(45deg)}
+}
+
+@keyframes translateLeft {
+    from {transform: translate(0px, 0px)}
+    to {transform: translate(100px, 0px)}
+}
+
+@keyframes translateDown {
+    from {transform: translate(0px, 0px)}
+    to {transform: translate(0px, 100px)}
+}
+
+@keyframes translateRight {
+    from {transform: translate(0px, 0px)}
+    to {transform: translate(-100px, 0px)}
+}
+
+@keyframes translateUp {
+    from {transform: translate(0px, 0px)}
+    to {transform: translate(0px, -100px)}
+}
+
+@keyframes fadeIn {
+    from {opacity: 0}
+    to {opacity: 1}
+}
