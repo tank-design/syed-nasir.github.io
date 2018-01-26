@@ -140,6 +140,14 @@ body {
     animation: fadeIn 3s 3s forwards;
 }
 
+#comingsoon {
+    opacity: 0;
+    position: absolute;
+    top: 500px;
+    left: 45px;
+    animation: fadeIn 3s 5s forwards;
+}
+
 
 
 /* KEYFRAMES */
