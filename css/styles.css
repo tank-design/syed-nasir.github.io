@@ -34,9 +34,18 @@ body {
     height: 60vh;
 }
 
+#flex.row {
+	display: flex;
+}
+
 #filler.row {
 	width: 100vw;
     height: 20vh;
+}
+
+#youtube {
+	height: 100%;
+	width: 100%;
 }
 
 .column-1 {
